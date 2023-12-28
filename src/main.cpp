@@ -3,6 +3,13 @@
 #include<iostream>
 #include<string>
 
+extern "C" {        //Use this to enable the Nvidia GPU
+    __declspec(dllexport) unsigned long NvOptimusEnablement = 0x00000001;
+}
+extern "C" {        //Use this to enable the AMD GPU
+    __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
+}
+
 int main(){
 
     GLuint Height, Width;
